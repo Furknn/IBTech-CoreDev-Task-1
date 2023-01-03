@@ -22,6 +22,9 @@ public class Address {
 
     @Column(name = "state")
     private String state;
+    
+	@Column(name = "zip_code")
+    private String zipCode;
 
     public Long getId() {
 		return id;
@@ -62,7 +65,4 @@ public class Address {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-
-	@Column(name = "zip_code")
-    private String zipCode;
 }

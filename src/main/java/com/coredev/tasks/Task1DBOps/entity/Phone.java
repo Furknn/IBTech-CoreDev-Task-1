@@ -16,6 +16,9 @@ public class Phone {
 
     @Column(name = "area_code")
     private String areaCode;
+    
+	@Column(name = "number")
+    private String number;
 
     public Long getId() {
 		return id;
@@ -41,6 +44,4 @@ public class Phone {
 		this.number = number;
 	}
 
-	@Column(name = "number")
-    private String number;
 }

@@ -21,6 +21,13 @@ public class Account {
 
     @Column(name = "account_type")
     private String accountType;
+    
+	@Column(name = "balance")
+    private Double balance;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
     public Long getId() {
 		return id;
@@ -61,11 +68,4 @@ public class Account {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
-	@Column(name = "balance")
-    private Double balance;
-
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
 }
