@@ -17,25 +17,25 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "customer")
 public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(name = "name")
-    private String name;
+	@Column(name = "name")
+	private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
+	private Address address;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "phone_id", referencedColumnName = "id")
-    private Phone phone;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "phone_id", referencedColumnName = "id")
+	private Phone phone;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Account> accounts;
-    
-    public Long getId() {
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+	private List<Account> accounts;
+
+	public Long getId() {
 		return id;
 	}
 
@@ -68,7 +68,7 @@ public class Customer {
 	}
 
 	public List<Account> getAccounts() {
-		if(accounts ==null) {
+		if (accounts == null) {
 			accounts = new ArrayList<Account>();
 		}
 		return accounts;
